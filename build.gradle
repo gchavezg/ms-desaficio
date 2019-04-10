@@ -1,0 +1,85 @@
+buildscript {
+	ext {
+        projectName 		= 'ms-pruebadani'
+        springBootVersion 	= '1.5.4.RELEASE'
+    }
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.5"
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'org.sonarqube'
+apply plugin: 'jacoco'
+
+compileJava.options.encoding = "UTF-8"
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal();
+	mavenCentral()
+}
+
+
+ext {
+	springCloudVersion = 'Dalston.SR1'
+}
+
+jacocoTestReport {
+    executionData = fileTree(dir: "${buildDir}/jacoco", include: '**/*.exec')
+    reports {
+        xml.enabled true
+        html.destination "${buildDir}/jacocoHtml"
+    }
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-actuator')
+	compile('org.springframework.boot:spring-boot-starter-aop')
+	//compile('org.springframework.cloud:spring-cloud-starter-config')
+	compile('org.springframework.cloud:spring-cloud-starter-hystrix')
+	compile('org.springframework.cloud:spring-cloud-starter-hystrix-dashboard')
+	//compile('org.springframework.cloud:spring-cloud-starter-sleuth')
+	compile('org.springframework.cloud:spring-cloud-starter-stream-rabbit')
+	compile('org.springframework.cloud:spring-cloud-starter-turbine')
+	compile('org.springframework.boot:spring-boot-starter-hateoas')
+	//compile('org.springframework.boot:spring-boot-starter-security')
+	compile('org.springframework.boot:spring-boot-starter-validation')
+	compile('org.springframework.boot:spring-boot-starter-web'){
+		exclude module : 'spring-boot-starter-logging'
+		exclude module : 'logback-classic'
+	}
+	compile("org.springframework.boot:spring-boot-starter-web-services")
+
+	compile (group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.7.0')
+	compile (group: 'io.springfox', name: 'springfox-swagger2', version: '2.7.0')
+	
+	compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.1-api', version: '1.0.0.Final'
+	compile group: 'cz.jirutka.validator', name: 'validator-collection', version: '2.2.0'
+	
+	compile group: 'net.sf.dozer', name: 'dozer', version: '5.5.1'
+	compile group: 'net.sf.dozer', name: 'dozer-spring', version: '5.5.1'
+	
+	compileOnly('org.projectlombok:lombok')
+	
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+	testCompile (group: 'org.mockito', name: 'mockito-core', version: '2.8.47')
+	testCompile (group: 'info.cukes', name: 'cucumber-java', version: '1.2.5')
+	testCompile (group: 'info.cukes', name: 'cucumber-junit', version: '1.2.5')
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}

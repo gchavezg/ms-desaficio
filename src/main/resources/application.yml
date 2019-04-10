@@ -1,0 +1,15 @@
+management.security.enabled: false
+endpoints:
+  enabled: false
+  health.enabled: true
+  info.enabled: true
+
+spring:
+  cloud:
+    stream:
+      bindings:
+        worksChannel1:
+          binder: rabbit
+          destination: ex.stream.out
+          contentType: application/json
+          group: testgroup

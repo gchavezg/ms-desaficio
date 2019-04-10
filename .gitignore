@@ -1,0 +1,8 @@
+.gradle
+.settings
+.svn
+.scannerwork
+.classpath
+bin/
+build/
+.project

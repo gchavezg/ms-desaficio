@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: APP_NAME-replicationcontroller
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: APP_NAME
+    spec:
+      containers:
+      - name: APP_NAME-container
+        image: registry.ng.bluemix.net/mobcontainers/APP_NAME/built:BRANCH_NAME
+        ports:
+        - containerPort: 8080
