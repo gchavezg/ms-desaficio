@@ -9,10 +9,12 @@ import org.springframework.stereotype.Service;
 
 import cl.dani.ms.dto.relacion.crear.CrearUsuarioDTO;
 import cl.dani.ms.dto.relacion.crear.CrearUsuarioResponseDTO;
+import cl.dani.ms.util.Loggeable;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
+@Loggeable
 public class UsuarioServiceImpl implements UsuarioService,InitializingBean {
 
 	/**
@@ -21,7 +23,9 @@ public class UsuarioServiceImpl implements UsuarioService,InitializingBean {
 	@Autowired
 	private DozerBeanMapper dozerBeanMapper;
 	
+	
 	@Override
+	@Loggeable
 	public CrearUsuarioResponseDTO crearUsuario(CrearUsuarioDTO crearRelacion) {
 		System.out.println("hola");
 		
