@@ -22,7 +22,7 @@ public class UsuarioServiceImpl implements UsuarioService,InitializingBean {
 	
 	@Override
 	public void crearUsuario(CrearUsuarioDTO crearRelacion) {
-		
+		System.out.println("hola");
 		
 	}
 
