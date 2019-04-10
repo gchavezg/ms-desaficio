@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cl.dani.ms.dto.relacion.crear.CrearUsuarioDTO;
+import cl.dani.ms.dto.relacion.crear.CrearUsuarioResponseDTO;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -21,9 +22,12 @@ public class UsuarioServiceImpl implements UsuarioService,InitializingBean {
 	private DozerBeanMapper dozerBeanMapper;
 	
 	@Override
-	public void crearUsuario(CrearUsuarioDTO crearRelacion) {
+	public CrearUsuarioResponseDTO crearUsuario(CrearUsuarioDTO crearRelacion) {
 		System.out.println("hola");
 		
+		CrearUsuarioResponseDTO creado = CrearUsuarioResponseDTO.builder().build();
+		creado.setMensaje("OK");
+		return creado;
 	}
 
 
