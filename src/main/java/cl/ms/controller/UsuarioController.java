@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import cl.dani.ms.dto.relacion.crear.CrearUsuarioDTO;
+import cl.dani.ms.dto.relacion.crear.CrearUsuarioRequestDTO;
 import cl.dani.ms.dto.relacion.crear.CrearUsuarioResponseDTO;
 import cl.dani.ms.service.UsuarioService;
 import io.swagger.annotations.ApiOperation;
@@ -28,7 +28,7 @@ public class UsuarioController {
 	@CrossOrigin(origins = "*")
 	@ApiOperation("Realiza la creacion Usuario")
 	@PostMapping(value = "/prueba", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public CrearUsuarioResponseDTO crearUsuario(@Valid @RequestBody CrearUsuarioDTO crearUsu){
+	public CrearUsuarioResponseDTO crearUsuario(@Valid @RequestBody CrearUsuarioRequestDTO crearUsu){
 		return serviceRelacion.crearUsuario(crearUsu);
 	}
 

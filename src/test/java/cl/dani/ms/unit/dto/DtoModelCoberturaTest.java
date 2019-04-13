@@ -20,7 +20,7 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cl.dani.ms.dto.relacion.crear.CrearUsuarioDTO;
+import cl.dani.ms.dto.relacion.crear.CrearUsuarioRequestDTO;
 
 public class DtoModelCoberturaTest {
 
@@ -31,7 +31,7 @@ public class DtoModelCoberturaTest {
 	private static final Map<String, Map<String, FieldBean>> FIELDS_MAP_CACHE = new HashMap<>();
 	
 	static {
-		DTO_MODEL_CLASSES.add(CrearUsuarioDTO.class);
+		DTO_MODEL_CLASSES.add(CrearUsuarioRequestDTO.class);
 	}
 	
 	@Test
