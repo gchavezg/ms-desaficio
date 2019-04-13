@@ -1,4 +1,4 @@
-package cl.dani.ms.configuration;
+package cl.ms.configuration;
 
 
 import org.dozer.DozerBeanMapper;

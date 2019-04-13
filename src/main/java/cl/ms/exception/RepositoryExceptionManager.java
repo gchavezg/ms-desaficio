@@ -1,4 +1,4 @@
-package cl.dani.ms.exception;
+package cl.ms.exception;
 
 import java.lang.reflect.InvocationTargetException;
 

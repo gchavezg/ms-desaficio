@@ -1,4 +1,4 @@
-package cl.dani.ms.util;
+package cl.ms.util;
 
 public final class Constantes {
 	

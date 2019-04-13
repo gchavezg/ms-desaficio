@@ -1,8 +1,7 @@
-package cl.dani.ms.service;
+package cl.ms.service;
 
-
-import cl.dani.ms.dto.relacion.crear.CrearUsuarioRequestDTO;
-import cl.dani.ms.dto.relacion.crear.CrearUsuarioResponseDTO;
+import cl.ms.dto.relacion.crear.CrearUsuarioRequestDTO;
+import cl.ms.dto.relacion.crear.CrearUsuarioResponseDTO;
 
 public interface UsuarioService {
 

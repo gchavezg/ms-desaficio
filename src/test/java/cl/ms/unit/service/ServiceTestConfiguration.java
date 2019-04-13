@@ -1,4 +1,4 @@
-package cl.dani.ms.unit.service;
+package cl.ms.unit.service;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

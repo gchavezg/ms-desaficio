@@ -1,4 +1,4 @@
-package cl.dani.ms.dto.relacion.crear;
+package cl.ms.dto.relacion.crear;
 
 import org.hibernate.validator.constraints.NotBlank;
 

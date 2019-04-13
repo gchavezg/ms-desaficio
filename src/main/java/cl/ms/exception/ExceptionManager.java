@@ -1,4 +1,4 @@
-package cl.dani.ms.exception;
+package cl.ms.exception;
 
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

@@ -1,4 +1,4 @@
-package cl.dani.ms.controller;
+package cl.ms.controller;
 
 import javax.validation.Valid;
 
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import cl.dani.ms.dto.relacion.crear.CrearUsuarioRequestDTO;
-import cl.dani.ms.dto.relacion.crear.CrearUsuarioResponseDTO;
-import cl.dani.ms.service.UsuarioService;
+import cl.ms.dto.relacion.crear.CrearUsuarioRequestDTO;
+import cl.ms.dto.relacion.crear.CrearUsuarioResponseDTO;
+import cl.ms.service.UsuarioService;
 import io.swagger.annotations.ApiOperation;
 
 import lombok.extern.slf4j.Slf4j;

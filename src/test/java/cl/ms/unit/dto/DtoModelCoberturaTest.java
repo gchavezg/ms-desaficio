@@ -1,4 +1,4 @@
-package cl.dani.ms.unit.dto;
+package cl.ms.unit.dto;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -20,7 +20,7 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cl.dani.ms.dto.relacion.crear.CrearUsuarioRequestDTO;
+import cl.ms.dto.relacion.crear.CrearUsuarioRequestDTO;
 
 public class DtoModelCoberturaTest {
 
