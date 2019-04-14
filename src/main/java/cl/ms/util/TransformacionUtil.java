@@ -1,7 +1,5 @@
 package cl.ms.util;
 
-import java.util.List;
-
 public class TransformacionUtil {
 	
 	public static final int EMP_BUFFER = 8;

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import cl.ms.dto.login.LoginRequestDTO;
 import cl.ms.dto.relacion.crear.CrearUsuarioRequestDTO;
 import cl.ms.dto.relacion.crear.CrearUsuarioResponseDTO;
 import cl.ms.service.UsuarioService;
@@ -17,19 +18,32 @@ import io.swagger.annotations.ApiOperation;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * Clase controlador de endpoints de Microservicio 
+ * @author Gerald
+ *
+ */
 @Slf4j
 @RestController
-@RequestMapping("/Prueba-servicio")
+@RequestMapping("/ms-desafio")
 public class UsuarioController {
 		
+	/**
+	 * Interface de la logica de negocio 
+	 */
 	@Autowired
 	private UsuarioService serviceRelacion;
-
+	
+	/**
+	 * Login
+	 * @param crearUsu credenciales 
+	 * @return perfilamiento
+	 */
 	@CrossOrigin(origins = "*")
-	@ApiOperation("Realiza la creacion Usuario")
-	@PostMapping(value = "/prueba", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public CrearUsuarioResponseDTO crearUsuario(@Valid @RequestBody CrearUsuarioRequestDTO crearUsu){
-		return serviceRelacion.crearUsuario(crearUsu);
+	@ApiOperation("Login")
+	@PostMapping(value = "/login", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	public CrearUsuarioResponseDTO newLogin(@Valid @RequestBody LoginRequestDTO login){
+		return serviceRelacion.crearLogin(login);
 	}
 
 
