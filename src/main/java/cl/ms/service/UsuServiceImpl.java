@@ -83,7 +83,7 @@ public class UsuServiceImpl implements UsuService,InitializingBean {
 		
 		UsuarioModel usuModel = usuarioRepository.findByEmail(usuReq.getEmail());
 
-		String token =jwtGenerator.generateToken(usuModel);
+		String token = jwtGenerator.generateToken(usuModel);
 				
 		UsuarioResponseDTO res= UsuarioResponseDTO.builder().build();
 		res.setId(usuModel.getUsuCod().toString());

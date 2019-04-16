@@ -17,10 +17,11 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'org.sonarqube'
 apply plugin: 'jacoco'
+apply from: 'coverage.gradle'
 
 compileJava.options.encoding = "UTF-8"
 
-version = '0.0.1-SNAPSHOT'
+version = '1.0.0-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
