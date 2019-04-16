@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-        projectName 		= 'ms-pruebadani'
+        projectName 		= 'ms-desafio'
         springBootVersion 	= '1.5.4.RELEASE'
     }
 	repositories {
@@ -43,16 +43,15 @@ jacocoTestReport {
 
 
 dependencies {
+compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '1.5.6.RELEASE'
+
 	compile('org.springframework.boot:spring-boot-starter-actuator')
 	compile('org.springframework.boot:spring-boot-starter-aop')
-	//compile('org.springframework.cloud:spring-cloud-starter-config')
 	compile('org.springframework.cloud:spring-cloud-starter-hystrix')
 	compile('org.springframework.cloud:spring-cloud-starter-hystrix-dashboard')
-	//compile('org.springframework.cloud:spring-cloud-starter-sleuth')
 	compile('org.springframework.cloud:spring-cloud-starter-stream-rabbit')
 	compile('org.springframework.cloud:spring-cloud-starter-turbine')
 	compile('org.springframework.boot:spring-boot-starter-hateoas')
-	//compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.boot:spring-boot-starter-validation')
 	compile('org.springframework.boot:spring-boot-starter-web'){
 		exclude module : 'spring-boot-starter-logging'
@@ -74,14 +73,12 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 
 	testCompile (group: 'org.mockito', name: 'mockito-core', version: '2.8.47')
-	testCompile (group: 'info.cukes', name: 'cucumber-java', version: '1.2.5')
-	testCompile (group: 'info.cukes', name: 'cucumber-junit', version: '1.2.5')
 	
 	compile(group: 'org.springframework.boot', name: 'spring-boot-starter-security')
-    compile(group: 'org.springframework.security', name: 'spring-security-jwt', version: '1.0.3.RELEASE')
-    compile(group: 'org.springframework.security.oauth', name: 'spring-security-oauth2', version: '2.0.8.RELEASE') {
-        exclude(module: 'jackson-mapper-asl') // We already have a more recent jackson via Spring Boot
-    }
+    
+    compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.6.0'
+    compile group: 'org.hsqldb', name: 'hsqldb', version: '2.4.1'
+    
 }
 
 dependencyManagement {

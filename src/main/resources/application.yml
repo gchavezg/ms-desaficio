@@ -1,15 +1,9 @@
-management.security.enabled: false
-endpoints:
-  enabled: false
-  health.enabled: true
-  info.enabled: true
+management:
+  security:
+    enabled: true
+
 
 spring:
-  cloud:
-    stream:
-      bindings:
-        worksChannel1:
-          binder: rabbit
-          destination: ex.stream.out
-          contentType: application/json
-          group: testgroup
+  resources:
+    chain:
+      enabled: true
